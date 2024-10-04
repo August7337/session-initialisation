@@ -1,3 +1,5 @@
+Write-Host "Script executing..."
+
 Function Set-WallPaper {
  
 <#
@@ -66,6 +68,7 @@ public class Params
 
 $currentDir = Get-Location 
 Set-WallPaper -Image "$currentDir\wallpaper.png" -Style Fit
+Write-Host "Wallpaper changed."
 
 Function Set-DarkTheme {
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
@@ -74,3 +77,8 @@ Function Set-DarkTheme {
 }
 
 Set-DarkTheme
+Write-Host "Theme changed."
+
+Write-Host "Script execution completed."
+
+Start-Sleep -Seconds 5
